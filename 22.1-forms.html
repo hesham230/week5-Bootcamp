@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22.1-forms</title>
+  <style>
+    .container{
+      background: rgb(233, 232, 232);
+      margin: 10px;
+      padding: 15px;
+      width: 500px;
+    }
+    .btn{
+      padding: 5px;
+      background:#333;
+      color: #fff;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <form name="signup">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name">
+    <br> 
+    <label for="age">Age</label><br>
+    <input type="number" id="age" name="age">
+    <br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email">
+    <br> <br>
+    <!-- <input type="submit" class="btn" value="Submit"> -->
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+    const submit = document.querySelector('.btn');
+    
+    function handClick(){
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const email = document.getElementById('email').value;
+      var txt = '';
+      var r = confirm(`name: ${name}\n age: ${age}\n email: ${email}`);
+      if (r == true) {
+        txt = "congratulations you successfully sent this form";
+      } else {
+        document.getElementById('name').textContent = name;
+        document.getElementById('age').textContent = age;
+        document.getElementById('email').textContent = email;
+      }
+      console.log(txt);
+    }
+    
+    submit.addEventListener('click',handClick);
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21.2-lightbulb</title>
+  
+</head>
+<body>
+  <img id="myImage" onclick="changeImage()" src="bulbof.png" width="100" height="180">
+
+<p>Click the lightbulb to turn on/off the light.</p>
+
+<script>
+function changeImage() {
+  var image = document.getElementById('myImage');
+  if (image.src.match("bulbon")) {
+    image.src = "bulbof.png";
+  } else {
+    image.src = "bulbon.png";
+  }
+}
+
+// function changeImage() {
+//     var image = document.getElementById('myImage');
+//     if (image.src == "bulbon") {
+//         image.src = "bulbof.png";
+//     } else {
+//         image.src = "bulbon.png";
+//     }
+// }
+</script> 
+    
+<!--         
+.match() tests to see if a given string matches a regular expression.
+
+In your example, it tests if image.src contains the string "bulbon".
+
+If there is a match, it changes image.src to "pic_bulboff.gif"
+
+For more information on this function, I recommend -->
+</body>
+</html>

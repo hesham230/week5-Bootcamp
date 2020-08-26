@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<script src="./script.js" defer></script>
+</head>
+
+<body>
+  <ul>
+    <li>title 1</li>
+    <li class="start-here">title 2</li>
+    <li>
+      <ul class="second-ul">
+        <li>sub title 1</li>
+        <li>sub title 2</li>
+        <li>sub title 3</li>
+      </ul>
+    </li>
+    <li id="myLI">title 3</li>
+  </ul>
+<div>
+  <p>Hello World!</p>
+</div>
+
+<script>
+  //1. Change the text from “title 2” to “main title”
+  const startHere = document.querySelector(".start-here");
+  startHere.innerHTML = ("main title");
+
+  //2. Add another sub title with the text “sub title 4”
+  const newLi = document.createElement("li");
+  newLi.innerHTML = "sub title 4";
+  document.querySelector(".second-ul").appendChild(newLi);  
+
+  //3. Delete the last <li> element from the list.
+  const list = document.getElementById("myLI");
+  list.parentNode.removeChild(list); 
+ 
+
+  //4. Change the <title> element text to “Master Of The Dom”.
+  const title = document.querySelector("title");
+  title.innerHTML = ("Master Of The Dom");
+
+  //5. Change the text of the <p> element ot something else of your
+  const changeP = document.querySelector("p");
+  changeP.innerHTML = ("Fullstack Javascript bootcamp!");
+
+</script>
+</body>
+</html>

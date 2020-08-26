@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input{
+      padding: 10px;
+      margin: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Basic web page</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem tenetur explicabo eaque unde,<br> recusandae cupiditate odio necessitatibus commodi ipsam 
+    molestiae exercitationem asperiores, ut neque vel.</p>
+    <input type="button" value="Increase Font Size" onclick="increaseFontSize()">
+
+    <input type="button" value="Decrease Font Size" onclick="decreaseFontSize()">
+    
+  <script>
+
+  function increaseFontSize() {
+    txt = document.querySelector('p');
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+    currentSize = parseFloat(style);
+    if(currentSize <= 100)
+      txt.style.fontSize = (currentSize + 3) + 'px';
+  }
+function decreaseFontSize() {
+  txt = document.querySelector('p');
+  style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+  currentSize = parseFloat(style);
+  if(currentSize >= 6)
+  txt.style.fontSize = (currentSize - 3) + 'px';
+  } 
+  </script>
+</body>
+</html>
